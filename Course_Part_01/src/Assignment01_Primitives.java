@@ -1,5 +1,5 @@
 
-public class Assignment01 {
+public class Assignment01_Primitives {
 
     public static void main(String[] args) {
 
