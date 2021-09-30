@@ -2,6 +2,7 @@
 public class Assignment05_StringManipulation{
 
     public static void main(String[] args) {
+
         String firstName = "James";
         String lastName = "Dean";
         int age = 24;
