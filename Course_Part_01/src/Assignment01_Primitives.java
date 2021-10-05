@@ -10,7 +10,7 @@ public class Assignment01_Primitives {
          * Default: 0
          */
         byte byteVariable = 101;
-        System. out . println("Byte value is " + byteVariable);
+        System.out.println("Byte value is " + byteVariable);
 
         /*
          * short
@@ -19,7 +19,7 @@ public class Assignment01_Primitives {
          * Default: 0
          */
         short shortVariable = 30_000;
-        System. out . println("Short value is " + shortVariable);
+        System.out.println("Short value is " + shortVariable);
 
         /*
          * int
@@ -28,7 +28,7 @@ public class Assignment01_Primitives {
          * Default: 0
          */
         int intVariable = 2_000_676_782;
-        System. out . println("Int value is " + intVariable);
+        System.out.println("Int value is " + intVariable);
 
         /*
          * long
@@ -37,7 +37,7 @@ public class Assignment01_Primitives {
          * Default: 0L
          */
         long longVariable = 9_000_676_782_456_657_643L;
-        System. out . println("Long value is " + longVariable);
+        System.out.println("Long value is " + longVariable);
 
         /*
          * float
@@ -45,7 +45,7 @@ public class Assignment01_Primitives {
          * Default: 0.0f
          */
         float floatVariable = 340_176_876_724_223_242_857_987_984_938_342_234_234.0f;
-        System. out . println("Float value is " + floatVariable);
+        System.out.println("Float value is " + floatVariable);
 
         /*
          * double
@@ -53,7 +53,7 @@ public class Assignment01_Primitives {
          * Default: 0.0
          */
         double doubleVariable = 940_176_876_724_223_242_857_987_984_938_342_234_234.0;
-        System. out . println("Double value is " + doubleVariable);
+        System.out.println("Double value is " + doubleVariable);
 
         /*
          * boolean
@@ -61,7 +61,7 @@ public class Assignment01_Primitives {
          * Default: false
          */
         boolean booleanVariable = true;
-        System. out . println("Boolean value is " + booleanVariable);
+        System.out.println("Boolean value is " + booleanVariable);
 
         /*
          * char
@@ -69,7 +69,7 @@ public class Assignment01_Primitives {
          * Default: false
          */
         char charVariable = 'h';
-        System. out . println("Char value is " + charVariable);
+        System.out.println("Char value is " + charVariable);
 
     }
 }

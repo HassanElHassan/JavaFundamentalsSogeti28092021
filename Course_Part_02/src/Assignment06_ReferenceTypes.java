@@ -10,7 +10,7 @@ public class Assignment06_ReferenceTypes {
         // StringBuilder
         System.out.println("StringBuilder");
         StringBuilder strBuid = new StringBuilder("Hello Java World");
-        System.out.println(strBuid.delete(6,11));
+        System.out.println(strBuid.delete(6, 11));
 
         // Integer
         Integer myInt = 10;
