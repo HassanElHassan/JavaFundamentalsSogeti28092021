@@ -14,7 +14,6 @@ public class Assignment09_WhileDoWhileForForEach {
             sum += myArray[i];
             i++;
         }
-        ;
         System.out.println("Sum of all numbers by while loop is " + sum);
 
         // do-while loop
@@ -38,7 +37,6 @@ public class Assignment09_WhileDoWhileForForEach {
         for (int num : myArray) {
             sum += num;
         }
-        ;
         System.out.println("Sum of all numbers by for-each loop is " + sum);
     }
 }

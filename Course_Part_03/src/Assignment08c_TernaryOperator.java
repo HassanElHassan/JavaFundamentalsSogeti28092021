@@ -14,8 +14,8 @@ public class Assignment08c_TernaryOperator {
         // example with b=-21: -21-(-21*2) = -21--42 = -21+42 = 21
         System.out.println((b >= 0) ? b : (b - (b * 2)));
 
-        // If flower is larger than 1 the following, if flower is 2, will be printed: There are 2 flowers on the table
-        // If flower is less than 1 the following, if flower is 1, will be printed: There is 1 flower on the table
+        // If flower is larger than 1 the following will be printed, flower=2: There are 2 flowers on the table
+        // If flower is less than 1 the following will be printed, flower=1: There is 1 flower on the table
         // Code is not optimal. If flower is zero the following will be printed:  There is 0 flower on the table
         int flower = 2;
         System.out.println(
