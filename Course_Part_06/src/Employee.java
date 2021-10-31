@@ -13,23 +13,24 @@ public class Employee {
     }
 
     public int getAnnualSalary() {
-        return this.salary * 12;
+        return salary * 12;
     }
 
     public void printAnnualSalary(){
-        System.out.println("Annual salary is: " + this.getAnnualSalary());
+        System.out.println("Annual salary is: " + getAnnualSalary());
     }
 
     public void raiseSalary(int percent){
-        this.salary = this.salary * (percent+100) / 100;
+        this.salary = salary * (percent+100) / 100;
     }
 
     public void printOverview(){
         System.out.printf(
-                "Employee[id=%d, name=%s, salary=%d]%n",
-                this.id,
-                this.firstName + " " + this.lastName,
-                this.salary
+                "Employee[id=%d, name=%s %s, salary=%d]%n",
+                id,
+                firstName,
+                lastName,
+                salary
         );
     }
 

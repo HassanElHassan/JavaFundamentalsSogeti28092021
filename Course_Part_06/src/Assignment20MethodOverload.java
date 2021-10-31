@@ -29,8 +29,8 @@ public class Assignment20MethodOverload {
 
     private static double multiply(double... numbers) {
         double total = 1;
-        for (double num : numbers) {
-            total *= num;
+        for (double number : numbers) {
+            total *= number;
         }
         return total;
     }

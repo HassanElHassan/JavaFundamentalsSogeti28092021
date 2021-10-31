@@ -12,9 +12,6 @@ public class Assignment22ClassEmployee {
         henry.raiseSalary(23);
         henry.printOverview();
 
-
-
-
     }
 
 }

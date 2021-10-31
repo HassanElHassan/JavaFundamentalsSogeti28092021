@@ -13,7 +13,7 @@ public class Car {
     }
 
     public void printCurrentSpeed() {
-        System.out.println("Current speed is: " + this.currentSpeed);
+        System.out.println("Current speed is: " + currentSpeed);
     }
 
     public int getTopSpeed() {
@@ -27,56 +27,26 @@ public class Car {
     public void printOverview() {
         System.out.printf(
                 "This %s has a current speed of %d km/h and has a top speed of %d km/h%n",
-                this.name,
-                this.currentSpeed,
-                this.topSpeed
+                name,
+                currentSpeed,
+                topSpeed
         );
     }
 
     public void increaseSpeed(int speed) {
-        int newSpeed = this.currentSpeed + speed;
+        int newSpeed = currentSpeed + speed;
         if (speed < 0) {
             System.out.println("Cannot decrease speed with this method");
-        } else if (newSpeed >= this.topSpeed) {
-            this.currentSpeed = this.topSpeed;
+        } else if (newSpeed >= topSpeed) {
+            currentSpeed = topSpeed;
             System.out.printf(
-                    "Top speed of Ferrari has been reached: %d km/h%n",
-                    this.topSpeed
+                    "Top speed of %s has been reached: %d km/h%n",
+                    name,
+                    topSpeed
             );
         } else {
-            this.currentSpeed = newSpeed;
+            currentSpeed = newSpeed;
         }
     }
-
-
-//
-//
-//    public String getType() {
-//        return type;
-//    }
-//
-//    public void setType(String type) {
-//        this.type = type;
-//    }
-//
-//    public int getSpeed() {
-//        return speed;
-//    }
-//
-//    public void setSpeed(int speed) {
-//        if ( speed < 0){
-//            this.speed = 0;
-//        } else {
-//            this.speed =speed;
-//        }
-//    }
-//
-//    public boolean isFast() {
-//        return fast;
-//    }
-//
-//    public void setFast(boolean fast) {
-//        this.fast = fast;
-//    }
 
 }

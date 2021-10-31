@@ -4,7 +4,6 @@ public class Course {
     private int numberOfAssignments;
     private boolean fun;
 
-
     public void setName(String name) {
         this.name = name;
     }
@@ -22,7 +21,7 @@ public class Course {
     }
 
     public boolean isFun() {
-        return this.numberOfAssignments <= 30;
+        return numberOfAssignments <= 30;
     }
 
 

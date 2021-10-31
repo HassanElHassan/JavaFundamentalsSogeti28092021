@@ -24,8 +24,8 @@ public class Point {
     public void printCoordinates(){
         System.out.printf(
                 "The x value is %d and the y value is %d",
-                getX(), //this.x
-                getY() // this.y
+                x,
+                y
         );
     }
 
