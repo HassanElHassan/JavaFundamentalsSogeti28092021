@@ -20,7 +20,9 @@ public class SavingsAccount extends Account {
     public void withdraw(int amount) {
         if (balance - amount < 0) {
             System.out.println("Amount too high!");
-        } else balance -= amount;
+        } else {
+            balance -= amount;
+        }
     }
 
 }

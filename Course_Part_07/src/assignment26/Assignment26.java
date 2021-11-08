@@ -17,7 +17,6 @@ public class Assignment26 {
 
         checkers.setPlayer1(player1);
         checkers.setPlayer2(player2);
-
         checkers.printScoreBoard();
 
     }
