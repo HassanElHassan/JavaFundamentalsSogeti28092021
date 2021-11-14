@@ -6,7 +6,7 @@ public class Circle extends Shape {
 
     public Circle(double radius) {
         super("Circle");
-        this.radius = check_value(radius);
+        this.radius = checkValue(radius);
     }
 
     @Override
@@ -29,7 +29,7 @@ public class Circle extends Shape {
     }
 
     public void setRadius(double radius) {
-        this.radius = check_value(radius);
+        this.radius = checkValue(radius);
     }
 
 }

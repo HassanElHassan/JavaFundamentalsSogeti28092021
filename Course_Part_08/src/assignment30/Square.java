@@ -6,7 +6,7 @@ public class Square extends Shape {
 
     public Square(double side) {
         super("Square");
-        this.side = check_value(side);
+        this.side = checkValue(side);
     }
 
     @Override
@@ -29,7 +29,7 @@ public class Square extends Shape {
     }
 
     public void setSide(double side) {
-        this.side = check_value(side);
+        this.side = checkValue(side);
     }
 
 }

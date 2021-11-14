@@ -7,8 +7,8 @@ public class Rectangle extends Shape {
 
     public Rectangle(double width, double height) {
         super("Rectangle");
-        this.width = check_value(width);
-        this.height = check_value(height);
+        this.width = checkValue(width);
+        this.height = checkValue(height);
     }
 
     @Override
@@ -31,7 +31,7 @@ public class Rectangle extends Shape {
     }
 
     public void setWidth(double width) {
-        this.width = check_value(width);
+        this.width = checkValue(width);
     }
 
     public double getHeight() {
@@ -39,7 +39,7 @@ public class Rectangle extends Shape {
     }
 
     public void setHeight(double height) {
-        this.height = check_value(height);
+        this.height = checkValue(height);
     }
 
 }
