@@ -14,7 +14,7 @@ public class Assignment40 {
         System.out.println(colorMap);
         printLine();
 
-        colorMap.forEach((Integer key, String value) -> System.out.println(key + "->" + value));
+        colorMap.forEach((key, value) -> System.out.println(key + "->" + value));
         printLine();
 
         for (Map.Entry entry : colorMap.entrySet()) {

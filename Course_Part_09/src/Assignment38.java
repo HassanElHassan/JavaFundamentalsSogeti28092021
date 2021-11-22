@@ -14,7 +14,8 @@ public class Assignment38 {
         System.out.println(shapesMap);
 
         System.out.println();
-        shapesMap.forEach((Integer key, String value) -> System.out.println(key + "->" + value));
+        // shapesMap.forEach((Integer key, String value) -> System.out.println(key + "->" + value));
+        shapesMap.forEach((key, value) -> System.out.println(key + "->" + value));
 
         System.out.println();
         for (Map.Entry entry : shapesMap.entrySet()) {

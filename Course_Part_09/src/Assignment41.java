@@ -16,6 +16,7 @@ public class Assignment41 {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 String[] words = line.split(" ");
+                // wordCount += words.length; // to count outside the for loop
                 for (String word : words) {
                     wordCount++;
                     if (Character.isUpperCase(word.charAt(0))) upperCount++;
