@@ -6,6 +6,7 @@ public class TicTacToeBasic {
 
     static TreeMap<String, String> playOptions;
     static Scanner input = new Scanner(System.in);
+    static String playMode;
 
     public static void main(String[] args) {
 
@@ -22,9 +23,11 @@ public class TicTacToeBasic {
         }};
 
         System.out.println("Welcome to Tic-Tac-Toe");
+        displayBoardStartGame();
+        ChoosePlayMode();
         displayBoard();
 
-        for (int turn = 0; turn <= 9; ) {
+        for (int turn = 1; turn < 10; ) {
 
             playerTurn();
             displayBoard();
@@ -41,6 +44,37 @@ public class TicTacToeBasic {
         }
     }
 
+    /**
+     * Let player choose one of two play modes
+     * A: will show all the made moves and all the remaining options during the game
+     * B: will only show all the made moves during the game
+     * The selected value will be stored in the variable PlayMode
+     */
+    static void ChoosePlayMode() {
+        System.out.println();
+        System.out.println("Game has two play modes\n" +
+                "A:                 B:\n" +
+                " A1 | XX | C1          | XX |    \n" +
+                "--------------     --------------\n" +
+                " A2 | B2 | XX          |    | XX \n" +
+                "--------------     --------------\n" +
+                " OO | B3 | C3       OO |    |      "
+        );
+        do {
+            System.out.print("Please choose playmode A or B:");
+            playMode = input.next();
+        } while (!playMode.equals("A") && !playMode.equals("B"));
+        System.out.println();
+        System.out.println("Game has started - Have Fun");
+
+    }
+
+    /**
+     * Player is asked to enter his move
+     * Only the remaining options are allowed
+     * This will be validated using the isMoveNotValid method
+     * The request to enter a move will stop at a valid move selection
+     */
     static void playerTurn() {
         String playerMove;
         do {
@@ -50,24 +84,62 @@ public class TicTacToeBasic {
         playOptions.put(playerMove, "XX");
     }
 
+    /**
+     * Using the computerPickMove method a random move will be picked and displayed
+     */
     static void computerTurn() {
         String computerMove = computerPickMove();
         System.out.println("I will play at " + computerMove);
         playOptions.put(computerMove, "OO");
     }
 
+    /**
+     * Computer will pick a random move from the remaining options
+     *
+     * @return the random move
+     */
     static String computerPickMove() {
         ArrayList<String> remainingOptions = remainingPlayOptions();
         Random randomIndex = new Random();
         return remainingOptions.get(randomIndex.nextInt(remainingOptions.size()));
     }
 
-    static void displayBoard() {
+    /**
+     * The board with all the options will be displayed at the start of the game
+     */
+    static void displayBoardStartGame() {
+        System.out.println("" +
+                " A1 | B1 | C1 \n" +
+                "--------------\n" +
+                " A2 | B2 | C2 \n" +
+                "--------------\n" +
+                " A3 | B3 | C3   "
+        );
         System.out.println();
+    }
+
+    /**
+     * The board will be displayed according to the play mode chosen
+     * A: will show all the made moves and all the remaining options
+     * B: will only show all the made moves
+     */
+    static void displayBoard() {
+        String first;
+        String second;
+        String third;
+        System.out.println();
+        // Board will be printed layer by layer beginning from the top
         for (int i = 1; i <= 3; i++) {
-            String first = playOptions.get("A" + i).equals("  ") ? ("A" + i) : playOptions.get("A" + i);
-            String second = playOptions.get("B" + i).equals("  ") ? ("B" + i) : playOptions.get("B" + i);
-            String third = playOptions.get("C" + i).equals("  ") ? ("C" + i) : playOptions.get("C" + i);
+            if (playMode.equals("A")) {
+                first = playOptions.get("A" + i).equals("  ") ? ("A" + i) : playOptions.get("A" + i);
+                second = playOptions.get("B" + i).equals("  ") ? ("B" + i) : playOptions.get("B" + i);
+                third = playOptions.get("C" + i).equals("  ") ? ("C" + i) : playOptions.get("C" + i);
+            } else {
+                first = playOptions.get("A" + i);
+                second = playOptions.get("B" + i);
+                third = playOptions.get("C" + i);
+            }
+
             System.out.printf(" %s | %s | %s \n", first, second, third);
             if (i != 3) {
                 System.out.println("--------------");
@@ -76,6 +148,13 @@ public class TicTacToeBasic {
         System.out.println();
     }
 
+    /**
+     * Validate the player's input (move)
+     * A move is valid if it's one of the remaining options
+     *
+     * @param move is the player's input
+     * @return true if move is not valid and false is valid
+     */
     static boolean isMoveNotValid(String move) {
         ArrayList<String> remainingOptions = remainingPlayOptions();
         if (!remainingOptions.contains(move)) {
@@ -86,6 +165,11 @@ public class TicTacToeBasic {
         }
     }
 
+    /**
+     * The options (moves) that are still available to be played
+     *
+     * @return arraylist of the remaining options
+     */
     static ArrayList<String> remainingPlayOptions() {
         ArrayList<String> remainingOptions = new ArrayList<>();
         playOptions.forEach((key, value) -> {
@@ -95,8 +179,15 @@ public class TicTacToeBasic {
         return remainingOptions;
     }
 
+    /**
+     * The game consists out of 9 turns that can result in a win
+     * If turn 10 reached this means none of the players won
+     *
+     * @param turn count
+     * @return true if turn 10 is reached and it's a draw and false if not yet
+     */
     static boolean isDraw(int turn) {
-        if (turn == 9) {
+        if (turn == 10) {
             System.out.println("It’s a draw!");
             return true;
         } else {
@@ -104,6 +195,12 @@ public class TicTacToeBasic {
         }
     }
 
+    /**
+     * Check if player or computer won by having 3 of their marks in a line
+     * Win options: 3 horizontal lines - 3 vertical lines - 2 diagonal lines
+     *
+     * @return true if there is a winner and false if no winner yet
+     */
     static boolean isWin() {
         String line = "";
         for (int winOption = 1; winOption <= 8; winOption++) {
