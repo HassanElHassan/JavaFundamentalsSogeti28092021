@@ -7,25 +7,11 @@ public class TicTacToeBasic {
     static TreeMap<String, String> playOptions;
     static Scanner input = new Scanner(System.in);
     static String playMode;
+    static Random randomIndex = new Random();
 
     public static void main(String[] args) {
 
-        playOptions = new TreeMap<>() {{
-            put("A1", "  ");
-            put("A2", "  ");
-            put("A3", "  ");
-            put("B1", "  ");
-            put("B2", "  ");
-            put("B3", "  ");
-            put("C1", "  ");
-            put("C2", "  ");
-            put("C3", "  ");
-        }};
-
-        System.out.println("Welcome to Tic-Tac-Toe");
-        displayBoardStartGame();
-        ChoosePlayMode();
-        displayBoard();
+        initGame();
 
         for (int turn = 1; turn < 10; ) {
 
@@ -42,6 +28,28 @@ public class TicTacToeBasic {
             turn++;
 
         }
+    }
+
+    /**
+     *
+     */
+    static void initGame() {
+        playOptions = new TreeMap<>() {{
+            put("A1", "  ");
+            put("A2", "  ");
+            put("A3", "  ");
+            put("B1", "  ");
+            put("B2", "  ");
+            put("B3", "  ");
+            put("C1", "  ");
+            put("C2", "  ");
+            put("C3", "  ");
+        }};
+
+        System.out.println("Welcome to Tic-Tac-Toe");
+        displayBoardStartGame();
+        ChoosePlayMode();
+        displayBoard();
     }
 
     /**
@@ -63,7 +71,7 @@ public class TicTacToeBasic {
         do {
             System.out.print("Please choose playmode A or B:");
             playMode = input.next();
-        } while (!playMode.equals("A") && !playMode.equals("B"));
+        } while (!(playMode.equals("A") || playMode.equals("B"))); // is: !playMode.equals("A") && !playMode.equals("B")
         System.out.println();
         System.out.println("Game has started - Have Fun");
 
@@ -100,7 +108,6 @@ public class TicTacToeBasic {
      */
     static String computerPickMove() {
         ArrayList<String> remainingOptions = remainingPlayOptions();
-        Random randomIndex = new Random();
         return remainingOptions.get(randomIndex.nextInt(remainingOptions.size()));
     }
 
